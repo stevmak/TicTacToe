@@ -46,7 +46,14 @@ class play
 				game = true;
 				break;
 			}
-			
+		
+			if (board1.checkIfTie())
+                        {
+                                System.out.println("\n Game is a tie!");
+                                game = true;
+                                break;
+                        }
+	
 			System.out.println("\n" + player2.name + ", choose x-coordinate: ");
 			int x2 = scan.nextInt();
 			System.out.println(player2.name + ", choose y-coordinate: ");
@@ -56,6 +63,13 @@ class play
 			if (player2.checkIfWon(board1))
 			{
 				System.out.println("\n" + player2.name + " wins!");
+				game = true;
+				break;
+			}
+			
+			if (board1.checkIfTie())
+			{
+				System.out.println("\n Game is a tie!");
 				game = true;
 				break;
 			}

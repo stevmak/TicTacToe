@@ -36,6 +36,26 @@ public class board
 
 	}
 
+	public boolean checkIfTie()
+	{
+		int count = 9;
+		for (int i = 0; i<3; i++)
+		{
+			for (int j = 0; j<3; j++)
+			{
+				if (grid[i][j].equals(" "))
+				{
+					count--;
+				}
+			}
+		}
+		if (count == 9)
+		{
+			return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args)
 	{
 		board board1 = new board();
